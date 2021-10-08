@@ -11,9 +11,9 @@ public interface GarageService {
 
 	public List<GarageDTO> mapToDTO(List<Garage> garageList);
 
+	public List<GarageDTO> findByLocation(String location);
 
-	public List<Garage> findByLocation(String location);
-	public List<Garage> findByName(String name);
+	public List<GarageDTO> findByName(String name);
 
 	public GarageDTO getGarageByID(Integer id);
 

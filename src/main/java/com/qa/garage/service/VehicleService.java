@@ -11,11 +11,11 @@ public interface VehicleService {
 
 	public List<VehicleDTO> mapToDTO(List<Vehicle> vehicleList);
 
-	public List<Vehicle> findByNoOfWheels(Integer noOfWheels);
+	public List<VehicleDTO> findByNoOfWheels(Integer noOfWheels);
 
-	public List<Vehicle> findByColour(String colour);
+	public List<VehicleDTO> findByColour(String colour);
 
-	public List<Vehicle> findByType(String type);
+	public List<VehicleDTO> findByType(String type);
 
 	public VehicleDTO getVehicleByID(Integer id);
 
