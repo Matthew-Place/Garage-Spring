@@ -28,6 +28,7 @@ public class GarageServiceDB implements GarageService {
 	@Override
 	public GarageDTO mapToDTO(Garage garage) {
 		GarageDTO dto = new GarageDTO();
+		dto.setId(garage.getId());
 		dto.setAddress(garage.getAddress());
 		dto.setName(garage.getName());
 
@@ -56,8 +57,8 @@ public class GarageServiceDB implements GarageService {
 	}
 
 	@Override
-	public List<GarageDTO> findByLocation(String location) {
-		return mapToDTO(repo.findByLocation(location));
+	public List<GarageDTO> findByAddress(String address) {
+		return mapToDTO(repo.findByAddress(address));
 	}
 
 	@Override
