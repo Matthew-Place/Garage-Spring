@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.garage.data.Garage;
@@ -17,6 +18,7 @@ import com.qa.garage.dto.GarageDTO;
 import com.qa.garage.service.interfaces.GarageService;
 
 @RestController
+@RequestMapping("/Garage")
 public class GarageController {
 
 	private GarageService service;

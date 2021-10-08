@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.qa.garage.data.Vehicle;
 import com.qa.garage.dto.VehicleDTO;
@@ -15,7 +14,6 @@ import com.qa.garage.service.interfaces.VehicleService;
 
 @Primary
 @Service
-@RequestMapping("/Vehicle")
 public class VehicleServiceDB implements VehicleService {
 
 	private VehicleRepo repo;
