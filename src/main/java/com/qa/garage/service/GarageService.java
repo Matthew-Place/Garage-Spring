@@ -15,9 +15,9 @@ public interface GarageService {
 
 	public List<GarageDTO> findByName(String name);
 
-	public GarageDTO getGarageByID(Integer id);
+	public GarageDTO findGarageByID(Integer id);
 
-	public List<GarageDTO> getAllGarages();
+	public List<GarageDTO> findAllGarages();
 
 	public GarageDTO createGarage(Garage garage);
 

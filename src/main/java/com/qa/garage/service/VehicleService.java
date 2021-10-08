@@ -17,9 +17,9 @@ public interface VehicleService {
 
 	public List<VehicleDTO> findByType(String type);
 
-	public VehicleDTO getVehicleByID(Integer id);
+	public VehicleDTO findVehicleByID(Integer id);
 
-	public List<VehicleDTO> getAllVehicles();
+	public List<VehicleDTO> findAllVehicles();
 
 	public VehicleDTO createVehicle(Vehicle vehicle);
 
