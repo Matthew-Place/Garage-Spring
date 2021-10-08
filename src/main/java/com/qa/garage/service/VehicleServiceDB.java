@@ -45,6 +45,11 @@ public class VehicleServiceDB implements VehicleService {
 	}
 
 	@Override
+	public List<VehicleDTO> findByNoOfWheelsOrColourOrType(Integer noOfWheels, String colour, String type) {
+		return mapToDTO(repo.findByNoOfWheelsOrColourOrType(noOfWheels, colour, type));
+	}
+
+	@Override
 	public List<VehicleDTO> findByNoOfWheels(Integer noOfWheels) {
 		return mapToDTO(repo.findByNoOfWheels(noOfWheels));
 	}
@@ -90,4 +95,5 @@ public class VehicleServiceDB implements VehicleService {
 		boolean exists = this.repo.existsById(id);
 		return !exists;
 	}
+
 }

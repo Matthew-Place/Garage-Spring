@@ -7,6 +7,8 @@ import com.qa.garage.dto.VehicleDTO;
 
 public interface VehicleService extends GenericService<VehicleDTO, Vehicle> {
 
+	public List<VehicleDTO> findByNoOfWheelsOrColourOrType(Integer noOfWheels, String colour, String type);
+
 	public List<VehicleDTO> findByNoOfWheels(Integer noOfWheels);
 
 	public List<VehicleDTO> findByColour(String colour);

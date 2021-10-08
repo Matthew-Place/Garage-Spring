@@ -67,6 +67,11 @@ public class GarageServiceDB implements GarageService {
 	}
 
 	@Override
+	public List<GarageDTO> findByNameOrAddress(String name, String address) {
+		return mapToDTO(repo.findByNameOrAddress(name, address));
+	}
+
+	@Override
 	public GarageDTO findByID(Integer id) {
 		return mapToDTO(repo.findById(id).orElseThrow(GarageNotFoundException::new));
 	}
