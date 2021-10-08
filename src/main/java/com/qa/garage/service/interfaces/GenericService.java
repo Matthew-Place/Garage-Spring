@@ -1,4 +1,4 @@
-package com.qa.garage.service;
+package com.qa.garage.service.interfaces;
 
 import java.util.List;
 
@@ -16,5 +16,5 @@ public interface GenericService<T, K extends Object> {
 
 	public T update(K k, Integer id);
 
-	public T delete(Integer id);
+	public boolean delete(Integer id);
 }

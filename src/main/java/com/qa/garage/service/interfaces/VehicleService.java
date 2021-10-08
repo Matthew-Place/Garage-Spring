@@ -1,4 +1,4 @@
-package com.qa.garage.service;
+package com.qa.garage.service.interfaces;
 
 import java.util.List;
 
