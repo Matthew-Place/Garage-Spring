@@ -28,7 +28,7 @@ public class GarageController {
 
 	@GetMapping("/findByName/{name}")
 	public List<GarageDTO> findByName(@PathVariable String name) {
-		return service.findByLocation(name);
+		return service.findByName(name);
 	}
 
 	@GetMapping("/findByLocation/{location}")
