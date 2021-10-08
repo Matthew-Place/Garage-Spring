@@ -20,7 +20,7 @@ public class Garage {
 	private Integer id;
 
 	String name;
-	String address;
+	String location;
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "garage") // specify the variable name of the FK
@@ -43,11 +43,11 @@ public class Garage {
 	}
 
 	public String getAddress() {
-		return address;
+		return location;
 	}
 
 	public void setAddress(String address) {
-		this.address = address;
+		this.location = address;
 	}
 
 	public List<Vehicle> getVehicleList() {
@@ -60,12 +60,12 @@ public class Garage {
 
 	@Override
 	public String toString() {
-		return "Garage [id=" + id + ", name=" + name + ", address=" + address + ", vehicleList=" + vehicleList + "]";
+		return "Garage [id=" + id + ", name=" + name + ", address=" + location + ", vehicleList=" + vehicleList + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(address, id, name, vehicleList);
+		return Objects.hash(location, id, name, vehicleList);
 	}
 
 	@Override
@@ -77,7 +77,7 @@ public class Garage {
 			return false;
 		}
 		Garage other = (Garage) obj;
-		return Objects.equals(address, other.address) && Objects.equals(id, other.id)
+		return Objects.equals(location, other.location) && Objects.equals(id, other.id)
 				&& Objects.equals(name, other.name) && Objects.equals(vehicleList, other.vehicleList);
 	}
 
