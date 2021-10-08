@@ -11,6 +11,7 @@ import com.qa.garage.data.Garage;
 import com.qa.garage.data.Vehicle;
 import com.qa.garage.dto.GarageDTO;
 import com.qa.garage.dto.VehicleDTO;
+import com.qa.garage.exceptions.GarageNotFoundException;
 import com.qa.garage.repo.GarageRepo;
 import com.qa.garage.service.interfaces.GarageService;
 
@@ -68,7 +69,7 @@ public class GarageServiceDB implements GarageService {
 
 	@Override
 	public GarageDTO findByID(Integer id) {
-		return mapToDTO(repo.findById(id).orElse(null));
+		return mapToDTO(repo.findById(id).orElseThrow(GarageNotFoundException::new));
 	}
 
 	@Override
@@ -83,7 +84,7 @@ public class GarageServiceDB implements GarageService {
 
 	@Override
 	public GarageDTO update(Garage newGarage, Integer id) {
-		Garage garage = repo.findById(id).orElse(null);
+		Garage garage = repo.findById(id).orElseThrow(GarageNotFoundException::new);
 		garage.setId(newGarage.getId());
 		garage.setAddress(newGarage.getAddress());
 		garage.setName(newGarage.getName());
@@ -97,5 +98,4 @@ public class GarageServiceDB implements GarageService {
 		boolean exists = this.repo.existsById(id);
 		return !exists;
 	}
-
 }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.qa.garage.data.Vehicle;
 import com.qa.garage.dto.VehicleDTO;
+import com.qa.garage.exceptions.VehicleNotFoundException;
 import com.qa.garage.repo.VehicleRepo;
 import com.qa.garage.service.interfaces.VehicleService;
 
@@ -62,7 +63,7 @@ public class VehicleServiceDB implements VehicleService {
 
 	@Override
 	public VehicleDTO findByID(Integer id) {
-		return mapToDTO(repo.findById(id).orElse(null));
+		return mapToDTO(repo.findById(id).orElseThrow(VehicleNotFoundException::new));
 	}
 
 	@Override
@@ -77,7 +78,7 @@ public class VehicleServiceDB implements VehicleService {
 
 	@Override
 	public VehicleDTO update(Vehicle newVehicle, Integer id) {
-		Vehicle vehicle = repo.findById(id).orElse(null);
+		Vehicle vehicle = repo.findById(id).orElseThrow(VehicleNotFoundException::new);
 		vehicle.setColour(newVehicle.getColour());
 		vehicle.setGarage(newVehicle.getGarage());
 		vehicle.setId(newVehicle.getId());
