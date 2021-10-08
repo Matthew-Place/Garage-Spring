@@ -19,11 +19,11 @@ public class Garage {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO_INCREMENT
 	private Integer id;
 
-	@JsonIgnore
-	@OneToMany(mappedBy = "garage") // specify the variable name of the FK
 	String name;
 	String address;
 
+	@JsonIgnore
+	@OneToMany(mappedBy = "garage") // specify the variable name of the FK
 	List<Vehicle> vehicleList = new ArrayList<>();
 
 	public Integer getId() {
