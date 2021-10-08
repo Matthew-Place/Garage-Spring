@@ -83,7 +83,6 @@ public class GarageServiceDB implements GarageService {
 	@Override
 	public GarageDTO update(Garage newGarage, Integer id) {
 		Garage garage = repo.findById(id).orElseThrow(GarageNotFoundException::new);
-		garage.setId(newGarage.getId());
 		garage.setAddress(newGarage.getAddress());
 		garage.setName(newGarage.getName());
 		garage.setVehicleList(newGarage.getVehicleList());

@@ -79,7 +79,6 @@ public class VehicleServiceDB implements VehicleService {
 		Vehicle vehicle = repo.findById(id).orElseThrow(VehicleNotFoundException::new);
 		vehicle.setColour(newVehicle.getColour());
 		vehicle.setGarage(newVehicle.getGarage());
-		vehicle.setId(newVehicle.getId());
 		vehicle.setNoOfWheels(newVehicle.getNoOfWheels());
 		vehicle.setType(newVehicle.getType());
 		return mapToDTO(repo.save(vehicle));
