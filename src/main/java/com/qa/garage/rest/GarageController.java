@@ -2,6 +2,8 @@ package com.qa.garage.rest;
 
 import java.util.List;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -41,6 +43,11 @@ public class GarageController {
 	@GetMapping("/findByID/{id}")
 	public GarageDTO findByID(@PathVariable Integer id) {
 		return service.findByID(id);
+	}
+
+	@GetMapping("/findByParameters")
+	public List<GarageDTO> getByParameters(@PathParam("name") String name, @PathParam("address") String address) {
+		return this.service.findByNameOrAddress(name, address);
 	}
 
 	@GetMapping("/findAll")

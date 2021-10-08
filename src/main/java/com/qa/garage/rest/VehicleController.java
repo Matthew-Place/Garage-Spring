@@ -2,6 +2,8 @@ package com.qa.garage.rest;
 
 import java.util.List;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -46,6 +48,12 @@ public class VehicleController {
 	@GetMapping("/findByID/{id}")
 	public VehicleDTO findByID(@PathVariable Integer id) {
 		return service.findByID(id);
+	}
+
+	@GetMapping("/findByParameters")
+	public List<VehicleDTO> getByParameters(@PathParam("noOfWheels") Integer noOfWheels,
+			@PathParam("colour") String colour, @PathParam("type") String type) {
+		return this.service.findByNoOfWheelsOrColourOrType(noOfWheels, colour, type);
 	}
 
 	@GetMapping("/findAll")
