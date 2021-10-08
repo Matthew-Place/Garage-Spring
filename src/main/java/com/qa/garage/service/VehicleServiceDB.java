@@ -77,7 +77,7 @@ public class VehicleServiceDB implements VehicleService {
 
 	@Override
 	public VehicleDTO update(Vehicle newVehicle, Integer id) {
-		Vehicle vehicle = new Vehicle();
+		Vehicle vehicle = repo.findById(id).orElse(null);
 		vehicle.setColour(newVehicle.getColour());
 		vehicle.setGarage(newVehicle.getGarage());
 		vehicle.setId(newVehicle.getId());
@@ -92,5 +92,4 @@ public class VehicleServiceDB implements VehicleService {
 		boolean exists = this.repo.existsById(id);
 		return !exists;
 	}
-
 }
