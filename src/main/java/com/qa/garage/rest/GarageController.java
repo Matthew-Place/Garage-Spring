@@ -43,8 +43,8 @@ public class GarageController {
 		return service.findByID(id);
 	}
 
-	@GetMapping("/getAll")
-	public List<GarageDTO> getAll() {
+	@GetMapping("/findAll")
+	public List<GarageDTO> findAll() {
 		return service.findAll();
 	}
 

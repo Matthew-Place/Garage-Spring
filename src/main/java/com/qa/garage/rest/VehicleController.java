@@ -48,8 +48,8 @@ public class VehicleController {
 		return service.findByID(id);
 	}
 
-	@GetMapping("/getAll")
-	public List<VehicleDTO> getAll() {
+	@GetMapping("/findAll")
+	public List<VehicleDTO> findAll() {
 		return service.findAll();
 	}
 
