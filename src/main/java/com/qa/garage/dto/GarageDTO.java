@@ -6,8 +6,8 @@ import java.util.List;
 public class GarageDTO {
 
 	private Integer id;
-	String name;
-	String address;
+	private String name;
+	private String address;
 	List<VehicleDTO> vehicleList = new ArrayList<>();
 
 	public Integer getId() {
